@@ -132,11 +132,11 @@ curl_setopt_array($ch, [
 ]);
 $json = curl_exec($ch);
 $data = json_decode($json, true);
-// The invoice fields sit at the root of the response.
-echo $data['seller']['name'];
+// The invoice document sits under the "invoice" key of the response.
+echo $data['invoice']['seller']['name'];
 ```
 
-[Full example: `extract-json.php`](./extract-json.php) | [API reference](https://www.invoicexml.com/docs/api/extract/json)
+[Full example: `extract-json.php`](./extract-json.php) | [API reference](https://www.invoicexml.com/docs/api/extract/json) | [Sample response](../json/extract-json-response.json)
 
 ---
 

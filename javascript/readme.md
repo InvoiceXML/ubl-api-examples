@@ -141,12 +141,12 @@ const response = await fetch('https://api.invoicexml.com/v1/extract/json', {
     headers: { Authorization: 'Bearer ' + apiKey },
     body: form,
 });
-const invoice = await response.json();
-// The invoice fields sit at the root of the response.
+const { invoice } = await response.json();
+// The invoice document sits under the "invoice" key of the response.
 console.log(invoice.seller.name, invoice.totals.grandTotalAmount);
 ```
 
-[Full example: `extract-json.html`](./extract-json.html) | [API reference](https://www.invoicexml.com/docs/api/extract/json)
+[Full example: `extract-json.html`](./extract-json.html) | [API reference](https://www.invoicexml.com/docs/api/extract/json) | [Sample response](../json/extract-json-response.json)
 
 
 ---

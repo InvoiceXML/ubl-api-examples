@@ -136,7 +136,7 @@ var json = await "https://api.invoicexml.com/v1/extract/json"
 await File.WriteAllTextAsync("invoice.json", json);
 ```
 
-[Full example: `ExtractJson.cs`](./ExtractJson.cs) | [API reference](https://www.invoicexml.com/docs/api/extract/json)
+[Full example: `ExtractJson.cs`](./ExtractJson.cs) | [API reference](https://www.invoicexml.com/docs/api/extract/json) | [Sample response](../json/extract-json-response.json)
 
 ---
 

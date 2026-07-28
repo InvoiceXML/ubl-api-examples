@@ -158,11 +158,11 @@ try (Response response = new OkHttpClient().newCall(
     ).execute()) {
     String json = response.body().string();
     // Deserialize with Jackson, Gson, or your preferred JSON library.
-    // The invoice fields sit at the root: seller, buyer, lines, totals.
+    // The invoice document sits under the "invoice" key: seller, buyer, lines, totals.
 }
 ```
 
-[Full example: `ExtractJson.java`](./ExtractJson.java) | [API reference](https://www.invoicexml.com/docs/api/extract/json)
+[Full example: `ExtractJson.java`](./ExtractJson.java) | [API reference](https://www.invoicexml.com/docs/api/extract/json) | [Sample response](../json/extract-json-response.json)
 
 ---
 

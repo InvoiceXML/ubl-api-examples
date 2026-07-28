@@ -2,7 +2,7 @@
 
 Open-source code examples for working with **UBL 2.1** (Universal Business Language), the OASIS XML standard for electronic business documents. UBL is one of the two syntaxes permitted by the European norm **EN 16931** (the other is UN/CEFACT CII), and it is the **native format of the Peppol network**.
 
-Examples in **C#, Java, PHP, JavaScript, Node.js, and Python** covering every common UBL operation: invoice creation across the Peppol BIS, NLCIUS, EHF, XRechnung UBL, and PINT profiles, validation, parsing invoice data into JSON, PDF rendering, and (experimental) AI-powered conversion of plain PDF invoices into compliant UBL documents.
+Examples in **C#, Java, PHP, JavaScript, Node.js, Python, and Ruby** covering every common UBL operation: invoice creation across the Peppol BIS, NLCIUS, EHF, XRechnung UBL, and PINT profiles, validation, parsing invoice data into JSON, PDF rendering, and (experimental) AI-powered conversion of plain PDF invoices into compliant UBL documents.
 
 Provided and maintained by [InvoiceXML](https://www.invoicexml.com), a complete e-invoice compliance toolkit for electronic invoicing standards, including UBL, Peppol BIS Billing, ZUGFeRD, Factur-X, XRechnung, and CII, available via REST-API, no-code platforms, and MCP server.
 
@@ -25,6 +25,7 @@ The EN 16931 specification alone runs over 400 pages, Peppol BIS Billing layers 
   - [Create and validate UBL with JavaScript in the browser](#create-and-validate-ubl-with-javascript-in-the-browser)
   - [Create and validate UBL with Node.js](#create-and-validate-ubl-with-nodejs)
   - [Create and validate UBL with Python](#create-and-validate-ubl-with-python)
+  - [Create and validate UBL with Ruby](#create-and-validate-ubl-with-ruby)
 - [Parse UBL data as JSON](#parse-ubl-data-as-json)
 - [Render UBL as a readable PDF](#render-ubl-as-a-readable-pdf)
 - [AI-powered PDF to UBL conversion (Experimental)](#ai-powered-pdf-to-ubl-conversion-experimental)
@@ -180,13 +181,29 @@ Browser-side examples for generating and inspecting UBL invoices client-side, us
 
 [Open the Python examples →](./python)
 
+### Create and validate UBL with Ruby
+
+Standard library only (`Net::HTTP`), no gems. The Ruby folder additionally covers AI parsing of old-school PDFs with confidence scores and embedded attachment extraction.
+
+```
+/ruby
+  create.rb
+  validate.rb
+  extract_json.rb
+  render.rb
+  parse_json.rb
+  extract_attachments.rb
+```
+
+[Open the Ruby examples →](./ruby)
+
 ---
 
 ## Parse UBL data as JSON
 
 Many downstream systems (ERPs, accounting software, expense management tools) work natively with JSON rather than XML. The `ExtractJson` examples in every language upload a UBL XML file and receive the EN 16931 model back as clean JSON: seller, buyer, line items, tax breakdown, totals, and payment details.
 
-The invoice fields sit at the **root** of the response, so you read `seller.name` or `totals.grandTotalAmount` (BT-112) directly, with no wrapper object to unpack.
+The invoice document sits under the **`invoice`** key of the response, so you read `invoice.seller.name` or `invoice.totals.grandTotalAmount` (BT-112). A complete sample response with every field of the invoice model populated is in [json/extract-json-response.json](./json/extract-json-response.json); optional fields that are absent from the source document come back as `null` (empty arrays for lists).
 
 This is the fastest way to get invoice data out of a UBL file and into a modern data pipeline.
 
@@ -294,7 +311,7 @@ No. The `invoice.totals` object and the `invoice.vatBreakdowns` array are calcul
 
 Pull requests are welcome. Useful contributions include:
 
-- Additional languages (Go, Rust, Ruby, Kotlin, Swift)
+- Additional languages (Go, Rust, Kotlin, Swift)
 - Alternative library implementations in existing languages
 - Sample invoice fixtures covering edge cases (multi-currency, intra-EU reverse charge, zero-rated supplies, credit notes)
 - Translations of the README and inline comments
