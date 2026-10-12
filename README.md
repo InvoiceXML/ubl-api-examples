@@ -268,7 +268,7 @@ UBL is one syntax among several in the European e-invoicing landscape:
 - **XRechnung**: the German CIUS of EN 16931, expressible in UBL or CII, mandatory for German B2G. See the [XRechnung examples](https://github.com/InvoiceXML/xrechnung-api-examples).
 - **EN 16931**: the European norm that underlies all of the above.
 
-For a side-by-side comparison of when to use which format, see the [e-invoicing standards comparison on invoicexml.com](https://invoicexml.com/standards).
+For a side-by-side comparison of when to use which format, see the [e-invoicing standards comparison on invoicexml.com](https://www.invoicexml.com/standards).
 
 ---
 
@@ -303,7 +303,7 @@ No. The `invoice.totals` object and the `invoice.vatBreakdowns` array are calcul
 - [OASIS UBL 2.1 specification](https://docs.oasis-open.org/ubl/UBL-2.1.html)
 - [Peppol EAS code list (electronic address schemes)](https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/)
 - [EN 16931 (European Committee for Standardization)](https://www.cencenelec.eu/)
-- [invoicexml.com](https://invoicexml.com): guides, tutorials, validators, and standard comparisons for UBL, Peppol, ZUGFeRD, Factur-X, XRechnung, and CII
+- [invoicexml.com](https://www.invoicexml.com): guides, tutorials, validators, and standard comparisons for UBL, Peppol, ZUGFeRD, Factur-X, XRechnung, and CII
 
 ---
 
