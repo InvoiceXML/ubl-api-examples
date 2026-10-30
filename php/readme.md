@@ -31,6 +31,7 @@ These examples use the built-in `curl_*` functions and `CURLFile` (available sin
 | File | Operation | API endpoint |
 |---|---|---|
 | [`create.php`](./create.php) | Build a UBL 2.1 XML invoice | [`POST /v1/create/ubl`](https://www.invoicexml.com/docs/api/create/ubl) |
+| [`send-email.php`](./send-email.php) | Create a UBL invoice and email it from your own domain | [`POST /v1/create/ubl/email`](https://www.invoicexml.com/docs/api/create/ubl/email) |
 | [`validate.php`](./validate.php) | Validate a UBL file against the EN 16931 and Peppol rules | [`POST /v1/validate/ubl`](https://www.invoicexml.com/docs/api/validate/ubl) |
 | [`extract-json.php`](./extract-json.php) | Parse a UBL XML into JSON | [`POST /v1/extract/json`](https://www.invoicexml.com/docs/api/extract/json) |
 | [`ai-convert.php`](./ai-convert.php) | (Experimental) Convert a plain PDF to UBL with AI | [`POST /v1/transform/to/ubl`](https://www.invoicexml.com/docs/api/transform/to/ubl) |

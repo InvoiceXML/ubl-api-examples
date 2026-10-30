@@ -40,6 +40,7 @@ uv pip install requests
 | File | Operation | API endpoint |
 |---|---|---|
 | [`create.py`](./create.py) | Build a UBL 2.1 XML invoice | [`POST /v1/create/ubl`](https://www.invoicexml.com/docs/api/create/ubl) |
+| [`send_email.py`](./send_email.py) | Create a UBL invoice and email it from your own domain | [`POST /v1/create/ubl/email`](https://www.invoicexml.com/docs/api/create/ubl/email) |
 | [`validate.py`](./validate.py) | Validate a UBL file against the EN 16931 and Peppol rules | [`POST /v1/validate/ubl`](https://www.invoicexml.com/docs/api/validate/ubl) |
 | [`extract_json.py`](./extract_json.py) | Parse a UBL XML into JSON | [`POST /v1/extract/json`](https://www.invoicexml.com/docs/api/extract/json) |
 | [`ai_convert.py`](./ai_convert.py) | (Experimental) Convert a plain PDF to UBL with AI | [`POST /v1/transform/to/ubl`](https://www.invoicexml.com/docs/api/transform/to/ubl) |

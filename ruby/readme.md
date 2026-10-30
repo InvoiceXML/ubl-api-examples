@@ -44,6 +44,7 @@ Nokogiri is deliberately absent. Ruby can build UBL XML by hand, but the EN 1693
 | File | Operation | API endpoint |
 |---|---|---|
 | [`create.rb`](./create.rb) | Build a UBL 2.1 XML invoice in any supported profile | [`POST /v1/create/ubl`](https://www.invoicexml.com/docs/api/create/ubl) |
+| [`send_email.rb`](./send_email.rb) | Create a UBL invoice and email it from your own domain | [`POST /v1/create/ubl/email`](https://www.invoicexml.com/docs/api/create/ubl/email) |
 | [`validate.rb`](./validate.rb) | Validate a UBL file against the XSD, EN 16931, and its CIUS | [`POST /v1/validate/ubl`](https://www.invoicexml.com/docs/api/validate/ubl) |
 | [`extract_json.rb`](./extract_json.rb) | Parse a UBL XML into JSON (deterministic, no AI) | [`POST /v1/extract/json`](https://www.invoicexml.com/docs/api/extract/json) |
 | [`render.rb`](./render.rb) | Render UBL XML into a human-readable PDF | [`POST /v1/render/ubl/to/pdf`](https://www.invoicexml.com/docs/api/render/ubl/to/pdf) |

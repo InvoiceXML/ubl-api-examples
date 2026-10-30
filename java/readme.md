@@ -1,6 +1,6 @@
 # UBL for Java: InvoiceXML API Examples
 
-Java code samples for creating, validating, and parsing **UBL** electronic invoices using the **[InvoiceXML API](https://www.invoicexml.com)**. Requires **Java 15 or later** (Java 17 or 21 LTS recommended): `Create.java` uses text blocks, which were introduced in Java 15. The other examples also compile on Java 8. Runs in Spring Boot, Quarkus, Micronaut, Jakarta EE, Android, AWS Lambda, or plain `public static void main` console apps.
+Java code samples for creating, validating, and parsing **UBL** electronic invoices using the **[InvoiceXML API](https://www.invoicexml.com)**. Requires **Java 15 or later** (Java 17 or 21 LTS recommended): `Create.java` and `SendEmail.java` use text blocks, which were introduced in Java 15. The other examples also compile on Java 8. Runs in Spring Boot, Quarkus, Micronaut, Jakarta EE, Android, AWS Lambda, or plain `public static void main` console apps.
 
 For background on UBL itself (what it is, the profiles, where it is used), see the [main repository README](../README.md).
 
@@ -20,7 +20,7 @@ Authorization: Bearer YOUR_API_KEY
 
 ## Requirements
 
-- **Java 15 or later** (Java 17 or 21 LTS recommended). `Create.java` uses text blocks, a Java 15+ feature; the other four examples also compile on Java 8.
+- **Java 15 or later** (Java 17 or 21 LTS recommended). `Create.java` and `SendEmail.java` use text blocks, a Java 15+ feature; the other examples also compile on Java 8.
 - **OkHttp 4.x** for clean multipart handling and bearer auth
 
 ### Maven
@@ -46,6 +46,7 @@ OkHttp is the de facto standard HTTP client for modern Java. Java's built-in `ja
 | File | Operation | API endpoint |
 |---|---|---|
 | [`Create.java`](./Create.java) | Build a UBL 2.1 XML invoice | [`POST /v1/create/ubl`](https://www.invoicexml.com/docs/api/create/ubl) |
+| [`SendEmail.java`](./SendEmail.java) | Create a UBL invoice and email it from your own domain | [`POST /v1/create/ubl/email`](https://www.invoicexml.com/docs/api/create/ubl/email) |
 | [`Validate.java`](./Validate.java) | Validate a UBL file against the EN 16931 and Peppol rules | [`POST /v1/validate/ubl`](https://www.invoicexml.com/docs/api/validate/ubl) |
 | [`ExtractJson.java`](./ExtractJson.java) | Parse a UBL XML into JSON | [`POST /v1/extract/json`](https://www.invoicexml.com/docs/api/extract/json) |
 | [`AiConvert.java`](./AiConvert.java) | (Experimental) Convert a plain PDF to UBL with AI | [`POST /v1/transform/to/ubl`](https://www.invoicexml.com/docs/api/transform/to/ubl) |
