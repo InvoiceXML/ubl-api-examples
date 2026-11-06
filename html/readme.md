@@ -57,7 +57,7 @@ A failed `POST /v1/create/ubl` returns RFC 7807 JSON. For validation errors (`er
 
 ```json
 {
-    "type":   "https://www.invoicexml.com/errors/4002",
+    "type":   "https://tools.ietf.org/html/rfc9110#section-15.5.1",
     "title":  "Model validation failed",
     "status": 400,
     "errorCode": 4002,
